@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="mode==0">
+      <strong>You are not authorized to add new task</strong> 
+    </div>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-primary" >
+      <div class="panel-heading">
+        New Task
+      </div>
+      <div class="panel-body">
+        <form #f="ngForm" (ngSubmit)="onSaveTask(f.value)">
+          <div class="form-group">
+            <label class="control-label">Task Name :</label>
+            <input class="form-control" ngModel="" type="text" name="taskName" required />
+          </div>
+
+          <button type="submit" class="btn btn-danger" [disabled]="!f.valid">Save</button>
+          
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
